@@ -32,6 +32,13 @@ app.use(express.static('public'));
 app.use(engine);
 
 app.set('views', `${__dirname}/views`);
+
+app.get('/', (req, res) => {
+    res.render('index')
+});
+
+
+
 // xử lý file json
 // app.use(bodyParser.json())
 // app.use(bodyParser.urlencoded({
@@ -42,7 +49,7 @@ app.set('views', `${__dirname}/views`);
 //app.use('/posts/store', storePost)
 
 // điều khiển tới trang chủ
-app.get("/", homePageController);
+//app.get("/", homePageController);
 
 // điều khiển đến bài đọc
 //app.get("/post/:id", getPostController);
@@ -66,6 +73,6 @@ app.get("/", homePageController);
 //    res.render('contact')
 //});
 
-app.listen(8000, () => {
-    console.log('botbeobakery on port 4000')
+app.listen(3000, () => {
+    console.log('botbeobakery on port 3000')
 });
