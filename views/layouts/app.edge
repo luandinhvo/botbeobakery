@@ -1,7 +1,8 @@
 <html>
   <head>
     <link rel="stylesheet" href="../css/style.css">
-  
+
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
   </head>
   <body>
     <nav class="nav">
@@ -24,12 +25,24 @@
             </span>
         </div>
     </nav>
-    <section class="home">
-    </section>
+
+    <div class="owl-carousel">
+        <div>
+            <img src="https://picsum.photos/1200/400" alt="#">
+        </div>
+        <div>
+            <img src="https://picsum.photos/seed/picsum/1200/400" alt="#">
+        </div>
+        <div>
+            <img src="https://picsum.photos/1200/400" alt="#">
+        </div>
+    </div>
 
 <!-- Xử lý nút menu -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="../js/custom.js"></script>
+
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 <!-- Function used to shrink nav bar removing paddings and adding black background -->
     <script>
@@ -41,6 +54,17 @@
                 $('.nav').removeClass('affix');
             }
         });
+        $(document).ready(function(){
+            $('.owl-carousel').slick({
+                draggable: true,
+      autoplay: true, /* this is the new line */
+      autoplaySpeed: 2000,
+      infinite: true,
+    //   slidesToShow: 1,
+    //   slidesToScroll: 1,
+      touchThreshold: 1000,
+            });
+        })
     </script>
   </body>
 </html>
