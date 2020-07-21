@@ -18,7 +18,7 @@
                     <li><a href="#">Liên hệ với Bột</a></li>
                 </ul>
             </div>
-            <span class="navTrigger">
+            <span class="navTrigger" onclick="openNav()">
                 <i></i>
                 <i></i>
                 <i></i>
@@ -38,6 +38,15 @@
         </div>
     </div>
 
+    <!-- side nav -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">Sản phẩm</a>
+        <a href="#">Đặt hàng</a>
+        <a href="#">Bột là ai?</a>
+        <a href="#">Liên hệ với bột</a>
+    </div>
+
 <!-- Xử lý nút menu -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="../js/custom.js"></script>
@@ -54,15 +63,26 @@
                 $('.nav').removeClass('affix');
             }
         });
+
+        //xử lý side bar
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "300px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+
+        //xử lý slide show
         $(document).ready(function(){
             $('.owl-carousel').slick({
                 draggable: true,
-      autoplay: true, /* this is the new line */
-      autoplaySpeed: 2000,
-      infinite: true,
-    //   slidesToShow: 1,
-    //   slidesToScroll: 1,
-      touchThreshold: 1000,
+            autoplay: true, /* this is the new line */
+            autoplaySpeed: 2000,
+            infinite: true,
+            //   slidesToShow: 1,
+            //   slidesToScroll: 1,
+            touchThreshold: 1000,
             });
         })
     </script>
